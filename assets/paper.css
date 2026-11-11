@@ -1,0 +1,109 @@
+/* Style A: paper and ink */
+:root {
+  --paper: #f6f1e7;
+  --ink: #2b2622;
+  --seal: #a8322d;
+  --hair: #d9cfbd;
+  --muted: #8a7f70;
+  --card: #fbf8f1;
+  --public: #56693c;
+  --font: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 2;
+}
+a { color: var(--seal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--hair);
+  font-size: 19px;
+}
+.top .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
+.top .brand:hover { text-decoration: none; }
+.seal {
+  display: inline-block;
+  background: var(--seal);
+  color: var(--paper);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+
+main { max-width: 42em; margin: 0 auto; padding: 8px 16px 48px; }
+.date { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.empty { color: var(--muted); text-align: center; padding: 48px 0; }
+/* A long URL or other unbroken run wraps instead of widening the page on a phone. */
+.body, .piece h1, .item h2, .item .ex { word-wrap: break-word; overflow-wrap: anywhere; }
+
+/* front page */
+.list { list-style: none; margin: 0; padding: 0; }
+.item { padding: 18px 0; border-bottom: 1px dashed var(--hair); }
+.item:last-child { border-bottom: 0; }
+.item .go { display: block; color: inherit; }
+.item .go:hover { text-decoration: none; }
+.item .go:hover h2 { color: var(--seal); }
+.item h2 { margin: 0 0 4px; font-size: 19px; font-weight: 700; line-height: 1.6; }
+.item .date { margin-bottom: 6px; }
+.item .ex { margin: 0; font-size: 15px; line-height: 1.8; color: #4a423b; }
+/* her tags, under a title */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 6px; font-size: 13px; line-height: 1.7; }
+.tags a, .tags span {
+  padding: 0 9px;
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--seal);
+  overflow-wrap: anywhere;
+}
+.tags a:hover { text-decoration: none; border-color: var(--seal); }
+.piece .tags { margin: 4px 0 4px; }
+.tagname { margin: 0 0 6px; font-size: 24px; font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
+.pager { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0 0; font-size: 14px; }
+.pager .older { margin-left: auto; }
+
+/* one piece */
+.back { display: block; margin: 18px 0 14px; font-size: 14px; }
+.piece h1 { margin: 0 0 4px; font-size: 26px; font-weight: 700; line-height: 1.5; }
+.piece .body { max-width: 35em; margin-top: 18px; }
+.body p { margin: 0 0 14px; text-align: justify; }
+.body .center { text-align: center; }
+.body h2, .body h3 { margin: 28px 0 8px; line-height: 1.6; }
+.body h2 { font-size: 21px; }
+.body h3 { font-size: 18px; }
+.body strong { font-weight: 700; }
+.body blockquote {
+  margin: 0 0 14px;
+  padding: 2px 16px;
+  border-left: 3px solid var(--hair);
+  color: #4a423b;
+}
+.body ul, .body ol { margin: 0 0 14px; padding-left: 1.6em; }
+.body img { display: block; max-width: 100%; height: auto; margin: 14px auto; }
+.body .video { display: block; aspect-ratio: 16 / 9; width: 100%; background: #1d1b19; margin: 14px 0; border-radius: 4px; overflow: hidden; }
+.body .video video { display: block; width: 100%; height: 100%; object-fit: contain; background: #1d1b19; }
+.body .video-note { display: block; margin: 14px 0; color: #7a6f66; font-size: 15px; }
+.body hr { border: 0; border-top: 1px dashed var(--hair); margin: 24px 0; }
+.body table { border-collapse: collapse; margin: 0 0 14px; max-width: 100%; display: block; overflow-x: auto; font-size: 15px; line-height: 1.7; }
+.body th, .body td { border: 1px solid var(--hair); padding: 6px 10px; vertical-align: top; }
+.body th { background: var(--card); }
+.body sup { font-size: 0.7em; line-height: 0; }
+.body ol.notes { font-size: 14px; line-height: 1.8; color: #4a423b; border-top: 1px solid var(--hair); padding-top: 12px; margin-top: 28px; }
+
+@media (min-width: 640px) {
+  .top { padding: 18px 26px; }
+  main { padding: 8px 26px 64px; }
+  .piece h1 { font-size: 30px; }
+}
